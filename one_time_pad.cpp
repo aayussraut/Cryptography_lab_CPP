@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 #include<string.h>
+#include<time.h>
+#include<stdlib.h>
 class One_Time_Pad{
 
     public:
@@ -18,6 +20,7 @@ class One_Time_Pad{
         void keyGen(){
             string newKey;
             string plainText=Text;
+            srand(time(0));
             for(int i=0;i<plainText.length();i++){
                 newKey += char((rand()%(97-122+1))+97);
             }
